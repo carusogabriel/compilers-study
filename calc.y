@@ -44,6 +44,7 @@ exp :
     | exp '+' term          { $$ = $1 + $3; }
     | exp '-' term          { $$ = $1 - $3; }
     | exp '*' term          { $$ = $1 * $3; }
+    | exp '/' term          { $$ = $1 / $3; }
 ;
 
 comma :

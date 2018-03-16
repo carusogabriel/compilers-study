@@ -35,7 +35,7 @@ Create a simple calculator with YACC and Flex, for basic math operations:
 - [x] Addition
 - [x] Subtraction
 - [x] Multiplication
-- [ ] Division
+- [x] Division
 - [ ] Exponentiation
 - [ ] Square root
 - And many others...
