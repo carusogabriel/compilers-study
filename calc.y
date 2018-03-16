@@ -27,12 +27,12 @@
 
 %%
 line :
-    assignment comma          { ; }
-    | exit_command comma      { exit(EXIT_SUCCESS); }
-    | print exp comma         { $$ = printf("Printing %d\n", $2); }
-    | line assignment comma   { ; }
-    | line exit_command comma { exit(EXIT_SUCCESS); }
-    | line print exp comma    { $$ = printf("Printing %d\n", $3); }
+    assignment semicolon          { ; }
+    | exit_command semicolon      { exit(EXIT_SUCCESS); }
+    | print exp semicolon         { $$ = printf("Printing %d\n", $2); }
+    | line assignment semicolon   { ; }
+    | line exit_command semicolon { exit(EXIT_SUCCESS); }
+    | line print exp semicolon    { $$ = printf("Printing %d\n", $3); }
 ;
 
 assignment :
@@ -47,7 +47,7 @@ exp :
     | exp '/' term          { $$ = $1 / $3; }
 ;
 
-comma :
+semicolon :
     ';'                     { ; }
 ;
 
