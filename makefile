@@ -5,7 +5,7 @@ run: calc
 	./calc
 
 calc: build_lexer build_parser
-	gcc lex.yy.c y.tab.c -o calc
+	gcc lex.yy.c y.tab.c -lm -o calc
 
 build_parser:
 	yacc -d calc.y

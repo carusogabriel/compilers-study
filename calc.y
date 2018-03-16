@@ -2,6 +2,7 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <ctype.h>
+    #include <math.h>
 
     void yyerror(char *message);
     int symbolVal(char symbol);
@@ -47,6 +48,7 @@ exp :
     | exp '-' term          { $$ = $1 - $3; }
     | exp '*' term          { $$ = $1 * $3; }
     | exp '/' term          { $$ = $1 / $3; }
+    | exp '^' term          { $$ = pow($1, $3); }
 ;
 
 semicolon :
