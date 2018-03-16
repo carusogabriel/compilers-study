@@ -23,7 +23,7 @@
 %token <num>   number
 %token <id>    identifier
 
-%type <num>    line statement exp term
+%type <num>    line statement exp factor term
 %type <id>     assignment
 
 %%
@@ -43,12 +43,16 @@ assignment :
 ;
 
 exp :
+    factor                  { $$ = $1; }
+    | exp '+' factor        { $$ = $1 + $3; }
+    | exp '-' factor        { $$ = $1 - $3; }
+;
+
+factor :
     term                    { $$ = $1; }
-    | exp '+' term          { $$ = $1 + $3; }
-    | exp '-' term          { $$ = $1 - $3; }
-    | exp '*' term          { $$ = $1 * $3; }
-    | exp '/' term          { $$ = $1 / $3; }
-    | exp '^' term          { $$ = pow($1, $3); }
+    | factor '*' term       { $$ = $1 * $3; }
+    | factor '/' term       { $$ = $1 / $3; }
+    | factor '^' term       { $$ = pow($1, $3); }
 ;
 
 semicolon :
