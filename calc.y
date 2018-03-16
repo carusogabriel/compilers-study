@@ -22,17 +22,19 @@
 %token <num>   number
 %token <id>    identifier
 
-%type <num>    line exp term
+%type <num>    line statement exp term
 %type <id>     assignment
 
 %%
 line :
-    assignment semicolon          { ; }
-    | exit_command semicolon      { exit(EXIT_SUCCESS); }
-    | print exp semicolon         { $$ = printf("Printing %d\n", $2); }
-    | line assignment semicolon   { ; }
-    | line exit_command semicolon { exit(EXIT_SUCCESS); }
-    | line print exp semicolon    { $$ = printf("Printing %d\n", $3); }
+    statement semicolon           { ; }
+    | line statement semicolon    { ; }
+;
+
+statement :
+    assignment                    { ; }
+    | exit_command                { exit(EXIT_SUCCESS); }
+    | print exp                   { $$ = printf("Printing %d\n", $2); }
 ;
 
 assignment :
