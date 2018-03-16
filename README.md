@@ -32,10 +32,10 @@ exit;
 
 ## Goals
 Create a simple calculator with YACC and Flex, for basic math operations:
-- [x] Addition
-- [x] Subtraction
-- [x] Multiplication
-- [x] Division
-- [x] Exponentiation
+- [x] Addition (`+`)
+- [x] Subtraction (`-`)
+- [x] Multiplication (`*`)
+- [x] Division (`/`)
+- [x] Exponentiation (`^`)
 - [ ] Square root
 - And many others...
