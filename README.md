@@ -31,7 +31,7 @@ exit;
 ```
 
 ## Goals
-Create a simple calculator with YACC and Flex, for basic math operations:
+Create a simple calculator with YACC and Lex, for basic math operations:
 - [x] Addition (`+`)
 - [x] Subtraction (`-`)
 - [x] Multiplication (`*`)
