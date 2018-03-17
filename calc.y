@@ -57,6 +57,7 @@ factor :
 
 term :
     number                  { $$ = $1; }
+    | '(' exp ')'           { $$ = $2; }
     | identifier            { $$ = symbolVal($1); }
 ;
 %%

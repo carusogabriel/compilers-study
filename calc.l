@@ -16,7 +16,7 @@
     return number;
 }
 [ \t\n\f\v]                 { ; }
-[-+*/^=;]                   { return yytext[0]; }
+[-+*/^()=;]                 { return yytext[0]; }
 .                           {
     ECHO;
     yyerror("Unexpected character.");
