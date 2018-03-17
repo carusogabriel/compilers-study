@@ -24,9 +24,9 @@ make calc && ./calc
 The goal of this repo is study how a compiler/interpreter work. The language is pretty simple,
 and only supports math operations (for now):
 ```
-sum = 1 + 4;
-print sum;
-Printing 5
+sum = 2 * (4 + 2);
+calc sum;
+result: 12
 exit;
 ```
 

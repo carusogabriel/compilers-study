@@ -5,7 +5,7 @@
 %}
 
 %%
-"print"                    { return print; }
+"calc"                     { return calc; }
 "exit"                     { return exit_command; }
 [a-zA-Z_][a-zA-Z0-9_]*     {
     yylval.id = yytext[0];

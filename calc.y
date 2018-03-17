@@ -17,7 +17,7 @@
     char id;
 }
 
-%token print
+%token calc
 %token exit_command
 
 %token <num>   number
@@ -35,7 +35,7 @@ line :
 statement :
     assignment                    { ; }
     | exit_command                { exit(EXIT_SUCCESS); }
-    | print exp                   { $$ = printf("Printing %d\n", $2); }
+    | calc exp                    { $$ = printf("result: %d\n", $2); }
 ;
 
 assignment :
