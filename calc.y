@@ -28,8 +28,8 @@
 
 %%
 line :
-    statement semicolon           { ; }
-    | line statement semicolon    { ; }
+    statement ';'           { ; }
+    | line statement ';'    { ; }
 ;
 
 statement :
@@ -53,10 +53,6 @@ factor :
     | factor '*' term       { $$ = $1 * $3; }
     | factor '/' term       { $$ = $1 / $3; }
     | factor '^' term       { $$ = pow($1, $3); }
-;
-
-semicolon :
-    ';'                     { ; }
 ;
 
 term :
