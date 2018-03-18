@@ -14,15 +14,10 @@ To run, simple type:
 make run
 ```
 
-or
-
-```bash
-make calc && ./calc
-```
-
 ## Language
 The goal of this repo is study how a compiler/interpreter work. The language is pretty simple,
 and only supports math operations (for now):
+
 ```
 sum = 2 * (4 + 2);
 calc sum;
@@ -37,5 +32,3 @@ Create a simple calculator with YACC and Lex, for basic math operations:
 - [x] Multiplication (`*`)
 - [x] Division (`/`)
 - [x] Exponentiation (`^`)
-- [ ] Square root
-- And many others...

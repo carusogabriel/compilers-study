@@ -33,9 +33,9 @@ line :
 ;
 
 statement :
-    assignment                    { ; }
-    | exit_command                { exit(EXIT_SUCCESS); }
-    | calc exp                    { $$ = printf("result: %d\n", $2); }
+    assignment              { ; }
+    | exit_command          { exit(EXIT_SUCCESS); }
+    | calc exp              { $$ = printf("result: %d\n", $2); }
 ;
 
 assignment :
